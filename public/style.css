@@ -10,6 +10,19 @@
   --locked: #646d7b;
 }
 
+/*TITLEANDLOGO */
+.logo-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  width:45px;
+  height:45px;
+  object-fit:contain;
+}
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; min-height: 100%; }
 body {
