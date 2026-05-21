@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keysight Quiz Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <h1>Keysight Quiz Portal</h1>
+        <div class="status" id="activeQuizStatus">0 Active</div>
+      </header>
+
+      <section class="grid-wrap">
+        <div id="cardGrid" class="quiz-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div id="loadingOverlay" class="overlay visible">
+      <div class="spinner"></div>
+    </div>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
