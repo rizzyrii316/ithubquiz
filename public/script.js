@@ -65,6 +65,7 @@
     card.type = "button";
     card.disabled = locked || state.pendingLock || !hasLink || !!state.myActiveQuizId;
     card.setAttribute("aria-label", quiz.title);
+    card.innerHTML = `<img class="card-icon" src="/bulb.png" alt="" aria-hidden="true" />`;
 
     card.addEventListener("click", () => {
       if (locked || state.pendingLock || !hasLink || state.myActiveQuizId) return;
