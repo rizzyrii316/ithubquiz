@@ -60,17 +60,13 @@
     const locked = !!state.locks[quiz.id];
     const blocked = locked || !hasLink;
 
-    const card = document.createElement("article");
+    const card = document.createElement("button");
     card.className = `card ${blocked ? "locked" : ""}`;
+    card.type = "button";
+    card.disabled = locked || state.pendingLock || !hasLink || !!state.myActiveQuizId;
+    card.setAttribute("aria-label", quiz.title);
 
-    card.innerHTML = `
-      <h3 class="card-title">${quiz.title}</h3>
-      <div class="card-actions">
-        <button class="btn btn-start open-btn" ${locked || state.pendingLock || !hasLink || state.myActiveQuizId ? "disabled" : ""}>Start</button>
-      </div>
-    `;
-
-    card.querySelector(".open-btn")?.addEventListener("click", () => {
+    card.addEventListener("click", () => {
       if (locked || state.pendingLock || !hasLink || state.myActiveQuizId) return;
       state.selectedQuizId = quiz.id;
       state.pendingQuizWindow = window.open("about:blank", `quiz_${quiz.id}_${Date.now()}`);
