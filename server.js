@@ -1,5 +1,6 @@
 const path = require("path");
 const http = require("http");
+require("dotenv").config();
 const express = require("express");
 const { Server } = require("socket.io");
 
